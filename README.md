@@ -37,6 +37,7 @@ Stworzenie darmowej aplikacji mobilnej, której atrakcyjne funkcjonalności przy
 
 4. Jako użytkownik mogę dowiedzieć się o warunkach meteorologicznych na zewnątrz, aby móc się odpowiednio ubrać lub przygotować do poróży.
 
+![Use cases diagram](/documentation/use_case_diagram.png)
 
 ## 2. Architektura aplikacji
 
