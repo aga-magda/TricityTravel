@@ -8,7 +8,16 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.aib.tricitytravel.ui.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.aib.tricitytravel.ui.SettingsFragment"
+        android:label="@string/settings" />
 
 </navigation>
