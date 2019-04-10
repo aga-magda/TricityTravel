@@ -1,4 +1,4 @@
-package com.aib.tricitytravel.ui
+package com.aib.tricitytravel.ui.settingsfragment
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat

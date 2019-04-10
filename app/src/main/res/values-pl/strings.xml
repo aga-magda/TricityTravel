@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TricityTravel</string>
     <string name="settings">Ustawienia</string>
+    <string name="public_transport">Transport publiczny</string>
+    <string name="direction">kierunek:</string>
+    <string name="vehicle_type">Typ pojazdu</string>
+    <string name="estimated_time">szacowana godzina przyjazdu:</string>
+    <string name="delay">opóźnienie:</string>
+    <string name="theoretical_time">odjazd wg rozkładu:</string>
+    <string name="delayed">Opóźniony</string>
+    <string name="on_time">Punktualny</string>
+    <string name="ahead_of_time">Przed czasem</string>
 </resources>
