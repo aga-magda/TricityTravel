@@ -11,4 +11,7 @@
     <string name="delayed">Delayed</string>
     <string name="on_time">On time</string>
     <string name="ahead_of_time">Ahead of time</string>
+    <string name="public_transport_settings">Public transport settings</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
 </resources>

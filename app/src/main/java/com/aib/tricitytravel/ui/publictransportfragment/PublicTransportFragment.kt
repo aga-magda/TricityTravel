@@ -2,8 +2,10 @@ package com.aib.tricitytravel.ui.publictransportfragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aib.tricitytravel.R
@@ -57,5 +59,15 @@ class PublicTransportFragment : BaseFragment() {
 //        })
 
         return rootView
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.settings -> {
+                Navigation.findNavController(view!!).navigate(R.id.action_publicTransportFragment_to_settingsFragment)
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

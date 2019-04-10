@@ -1,4 +1,4 @@
-package com.aib.tricitytravel.data.dto
+package com.aib.tricitytravel.data.dto.api
 
 data class Delay(
     val id: String,

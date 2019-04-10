@@ -10,4 +10,7 @@
     <string name="delayed">Opóźniony</string>
     <string name="on_time">Punktualny</string>
     <string name="ahead_of_time">Przed czasem</string>
+    <string name="public_transport_settings">Ustawienia transportu miejskiego</string>
+    <string name="add">Dodaj</string>
+    <string name="delete">Usuń</string>
 </resources>

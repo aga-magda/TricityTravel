@@ -1,6 +1,6 @@
 package com.aib.tricitytravel.data
 
-import com.aib.tricitytravel.data.dto.EstimatedTimes
+import com.aib.tricitytravel.data.dto.api.EstimatedTimes
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
