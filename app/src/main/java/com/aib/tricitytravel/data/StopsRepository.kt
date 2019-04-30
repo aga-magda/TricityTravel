@@ -2,7 +2,15 @@ package com.aib.tricitytravel.data
 
 class StopsRepository {
 
-    fun getAllStops() {
+    fun getAllStopsFromFirebase() {
         
+    }
+
+    fun getSavedStops() {
+
+    }
+
+    fun getEstimatedTimesForStop(stopId: String) {
+
     }
 }
