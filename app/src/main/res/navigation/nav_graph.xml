@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.aib.tricitytravel.ui.settingsfragment.SettingsFragment"
-        android:label="@string/settings" />
+        android:label="@string/settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_settingsSelectStopFragment"
+            app:destination="@id/settingsSelectStopFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/mainFragment"
@@ -29,5 +33,10 @@
             android:id="@+id/action_publicTransportFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/settingsSelectStopFragment"
+        android:name="com.aib.tricitytravel.ui.settingsfragment.SettingsSelectStopFragment"
+        android:label="@string/search_stops" />
 
 </navigation>

@@ -14,4 +14,6 @@
     <string name="public_transport_settings">Public transport settings</string>
     <string name="add">Add</string>
     <string name="delete">Delete</string>
+    <string name="search_stops">Search stops</string>
+    <string name="edit_stop_list">Edit stop list</string>
 </resources>

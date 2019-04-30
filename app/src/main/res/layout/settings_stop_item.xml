@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/settings_stop_item_height"
-    android:layout_margin="10dp"
+    android:layout_margin="5dp"
     android:background="@drawable/border">
 
-    <TextView
-        android:id="@+id/stopDescText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/headSignText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="1 Maja" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/headSignText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/routeIdText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stopDescText"
-        tools:text="Rumia Szmelta" />
+        <TextView
+            android:id="@+id/stopDescText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="1 Maja" />
 
-    <TextView
-        android:id="@+id/routeIdText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/headSignText"
-        tools:text="5" />
+        <TextView
+            android:id="@+id/headSignText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Rumia Szmelta" />
+
+        <TextView
+            android:id="@+id/routeIdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="5" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/settingsStopDeleteButton"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_marginEnd="16dp"
-        android:text="@string/delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_weight="0"
+        android:text="@string/add" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
