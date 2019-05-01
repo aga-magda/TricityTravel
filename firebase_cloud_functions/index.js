@@ -11,13 +11,13 @@ admin.initializeApp(functions.config().firebase);
 var db = admin.firestore();
 
 exports.downloadBusStopsFromFirebase = functions.https.onRequest((req, res) => {
-    let docRef = db.collection('stopsList').doc('stops');
+    let docRef = db.collection('TricityTravel').doc('stops');
     docRef.get()
         .then(doc => {
-            if (!doc.exists) {
-                console.log('No such document!');
-            } else {
+            if (doc.exists) {
                 res.send(doc.data());
+            } else {
+                console.log('No such document!');
             }
         })
         .catch(err => {
@@ -35,8 +35,8 @@ exports.createBusStopsJson = functions.https.onRequest((req, res) => {
             var thirdJson = results[2][todayDate].trips;
 
             var stopList = {};
-            var key = "stopList";
-            stopList["stopList"] = [];
+            var key = "stops";
+            stopList["stops"] = [];
 
             var listOfStopId = [];
 
@@ -78,10 +78,10 @@ exports.createBusStopsJson = functions.https.onRequest((req, res) => {
                 }
             }
 
-            let docRef = db.collection('stopsList').doc('stops');
+            let docRef = db.collection('TricityTravel').doc('stops');
             docRef.set(stopList);
 
-            res.send("stopList refreshed");
+            res.send("Stops refreshed");
         })
         .catch(err => console.log(err));
 })
