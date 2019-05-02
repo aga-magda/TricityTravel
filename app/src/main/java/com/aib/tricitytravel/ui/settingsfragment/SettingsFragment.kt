@@ -46,7 +46,7 @@ class SettingsFragment : Fragment() {
     }
 
     private fun setupButtonOnClickListener() {
-        binding.settingsAddStopButton.setOnClickListener {
+        binding.editStopsButton.setOnClickListener {
             Navigation.findNavController(view!!).navigate(R.id.action_settingsFragment_to_settingsSelectStopFragment)
         }
     }

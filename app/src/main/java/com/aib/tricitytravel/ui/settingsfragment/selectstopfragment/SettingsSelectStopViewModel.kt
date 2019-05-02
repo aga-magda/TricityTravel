@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.aib.tricitytravel.data.StopsRepository
+import com.aib.tricitytravel.data.dto.FavoriteStop
 import com.aib.tricitytravel.data.dto.api.Stop
 import javax.inject.Inject
 
@@ -28,5 +29,9 @@ class SettingsSelectStopViewModel @Inject constructor(
         _isLoading.postValue(true)
         repository.replaceStopsInDb()
         _isLoading.postValue(false)
+    }
+
+    suspend fun addFavoriteStop(favoriteStop: FavoriteStop) {
+        repository.addFavoriteStop(favoriteStop)
     }
 }

@@ -17,4 +17,6 @@
     <string name="search_stops">Search stops</string>
     <string name="edit_stop_list">Edit stop list</string>
     <string name="refresh_stops">Refresh stops</string>
+    <string name="choose_bus_number">Choose bus number</string>
+    <string name="save">Save</string>
 </resources>

@@ -2,6 +2,7 @@ package com.aib.tricitytravel.di
 
 import android.content.Context
 import androidx.room.Room
+import com.aib.tricitytravel.data.db.FavoriteStopsDao
 import com.aib.tricitytravel.data.db.StopsDao
 import com.aib.tricitytravel.data.db.TricityTravelDatabase
 import dagger.Module
@@ -15,7 +16,13 @@ class DatabaseModule(
 
     @Singleton
     @Provides
-    fun provideSubjectsDao(database: TricityTravelDatabase): StopsDao {
+    fun provideFavoriteStopsDao(database: TricityTravelDatabase): FavoriteStopsDao {
+        return database.favoriteStopsDao()
+    }
+
+    @Singleton
+    @Provides
+    fun provideStopsDao(database: TricityTravelDatabase): StopsDao {
         return database.stopsDao()
     }
 
