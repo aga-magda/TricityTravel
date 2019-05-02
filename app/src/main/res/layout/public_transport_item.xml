@@ -26,7 +26,7 @@
             tools:srcCompat="@tools:sample/avatars[0]" />
 
         <TextView
-            android:id="@+id/routeIdText"
+            android:id="@+id/routeIdsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -57,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/stopDescText" />
 
         <TextView
-            android:id="@+id/headSignText"
+            android:id="@+id/directionsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"

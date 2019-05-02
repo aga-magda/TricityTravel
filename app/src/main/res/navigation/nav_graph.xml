@@ -36,7 +36,7 @@
 
     <fragment
         android:id="@+id/settingsSelectStopFragment"
-        android:name="com.aib.tricitytravel.ui.settingsfragment.SettingsSelectStopFragment"
+        android:name="com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment"
         android:label="@string/search_stops" />
 
 </navigation>

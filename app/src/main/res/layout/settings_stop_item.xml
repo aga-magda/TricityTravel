@@ -18,19 +18,26 @@
             android:id="@+id/stopDescText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="bold"
             tools:text="1 Maja" />
 
         <TextView
-            android:id="@+id/headSignText"
+            android:id="@+id/directionsText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Rumia Szmelta" />
+            android:ellipsize="end"
+            android:maxLines="2"
+            tools:text="Rumia Szmelta, Rumia" />
 
         <TextView
-            android:id="@+id/routeIdText"
+            android:id="@+id/routeIdsText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="5" />
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="5, 6, 7" />
 
     </LinearLayout>
 

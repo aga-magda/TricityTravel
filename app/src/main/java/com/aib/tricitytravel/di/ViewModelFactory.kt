@@ -3,9 +3,7 @@ package com.aib.tricitytravel.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aib.tricitytravel.data.StopsRepository
-import com.aib.tricitytravel.ui.settingsfragment.SettingsFragment
-import com.aib.tricitytravel.ui.settingsfragment.SettingsSelectStopFragment
-import com.aib.tricitytravel.ui.settingsfragment.SettingsSelectStopViewModel
+import com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopViewModel
 import com.aib.tricitytravel.ui.settingsfragment.SettingsViewModel
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -19,10 +17,10 @@ class ViewModelFactory @Inject constructor(
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
         with(modelClass) {
             when {
-                isAssignableFrom(SettingsFragment::class.java) ->
+                isAssignableFrom(SettingsViewModel::class.java) ->
                     SettingsViewModel()
-                isAssignableFrom(SettingsSelectStopFragment::class.java) ->
-                    SettingsSelectStopViewModel()
+                isAssignableFrom(SettingsSelectStopViewModel::class.java) ->
+                    SettingsSelectStopViewModel(stopsRepository)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }

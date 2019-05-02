@@ -48,9 +48,9 @@ class PublicTransportRecyclerAdapter(
         var delayStatusTextView: TextView? = null
 
         init {
-            routeIdTextView = itemView.routeIdText
+            routeIdTextView = itemView.routeIdsText
             stopDescTextView = itemView.stopDescText
-            headSignTextView = itemView.headSignText
+            headSignTextView = itemView.directionsText
             theoreticalTimeTextView = itemView.theoreticalTimeText
             delayTextView = itemView.delayText
             estimatedTimesTextView = itemView.estimatedTimeText
