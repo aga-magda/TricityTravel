@@ -16,4 +16,5 @@
     <string name="delete">Delete</string>
     <string name="search_stops">Search stops</string>
     <string name="edit_stop_list">Edit stop list</string>
+    <string name="refresh_stops">Refresh stops</string>
 </resources>

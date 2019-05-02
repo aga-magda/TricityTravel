@@ -12,6 +12,9 @@ interface StopsDao {
     @Query("SELECT * FROM Stop")
     suspend fun getStops(): List<Stop>
 
+    @Query("DELETE FROM Stop")
+    suspend fun deleteStops()
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertStops(vararg stops: Stop)
 }

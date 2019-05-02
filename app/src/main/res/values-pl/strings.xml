@@ -15,4 +15,5 @@
     <string name="delete">Usuń</string>
     <string name="search_stops">Wyszukaj przystanek</string>
     <string name="edit_stop_list">Edytuj listę linii</string>
+    <string name="refresh_stops">Odśwież przystanki</string>
 </resources>

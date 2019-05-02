@@ -22,6 +22,12 @@ class StopsRepository @Inject constructor(
         }
     }
 
+    suspend fun replaceStopsInDb() {
+        stopsDao.deleteStops()
+        val firebaseStops = getAllStopsFromFirebase()
+        stopsDao.insertStops(*firebaseStops.map { it }.toTypedArray())
+    }
+
     suspend fun getAllStopsFromFirebase(): List<Stop> {
         val stopsObject = firebaseService.getStopsFromFirebaseAsync().await()
         return stopsObject.stops

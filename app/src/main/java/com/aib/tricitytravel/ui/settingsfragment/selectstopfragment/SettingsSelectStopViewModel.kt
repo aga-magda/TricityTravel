@@ -19,8 +19,14 @@ class SettingsSelectStopViewModel @Inject constructor(
 
     suspend fun getStops() {
         val stops = repository.getAllStops()
-
         _stopItems.postValue(stops)
+
+        _isLoading.postValue(false)
+    }
+
+    suspend fun refreshStops() {
+        _isLoading.postValue(true)
+        repository.replaceStopsInDb()
         _isLoading.postValue(false)
     }
 }
