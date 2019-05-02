@@ -7,7 +7,8 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    modules = [AndroidSupportInjectionModule::class, ActivityModule::class, ViewModelModule::class, NetworkModule::class]
+    modules = [AndroidSupportInjectionModule::class, ActivityModule::class, ViewModelModule::class, NetworkModule::class,
+        DatabaseModule::class]
 )
 interface TricityTravelComponent {
 

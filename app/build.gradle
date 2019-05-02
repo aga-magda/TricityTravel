@@ -46,8 +46,8 @@ dependencies {
     implementation 'org.jsoup:jsoup:1.11.3'
     // Room
     implementation "androidx.room:room-runtime:2.1.0-alpha06"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:2.1.0-alpha06"
+    implementation "androidx.room:room-ktx:2.1.0-alpha06"
     // Navigation component
     implementation "androidx.navigation:navigation-fragment-ktx:2.1.0-alpha01"
     implementation "androidx.navigation:navigation-ui-ktx:2.1.0-alpha01"

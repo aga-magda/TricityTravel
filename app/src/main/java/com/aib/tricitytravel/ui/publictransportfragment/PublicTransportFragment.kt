@@ -50,7 +50,7 @@ class PublicTransportFragment : BaseFragment() {
 //                }
 //
 //                stopDescriptionText.text = "TEST"
-//                stopDelaysText.text = delays.toString()
+//                stopDelaysText.text = delays.toJson()
 //            }
 //
 //            override fun onFailure(call: Call<EstimatedTimes>, t: Throwable) {

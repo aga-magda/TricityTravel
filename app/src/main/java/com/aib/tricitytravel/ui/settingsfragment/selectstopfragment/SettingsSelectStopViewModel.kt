@@ -18,7 +18,7 @@ class SettingsSelectStopViewModel @Inject constructor(
     val stopItems: LiveData<List<Stop>> = _stopItems
 
     suspend fun getStops() {
-        val stops = repository.getAllStopsFromFirebase()
+        val stops = repository.getAllStops()
 
         _stopItems.postValue(stops)
         _isLoading.postValue(false)

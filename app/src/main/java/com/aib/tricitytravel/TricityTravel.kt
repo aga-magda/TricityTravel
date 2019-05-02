@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.content.res.Resources
 import com.aib.tricitytravel.di.DaggerTricityTravelComponent
+import com.aib.tricitytravel.di.DatabaseModule
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -18,7 +19,9 @@ class TricityTravel : Application(), HasActivityInjector {
         super.onCreate()
         res = resources
         DaggerTricityTravelComponent
-            .create()
+            .builder()
+            .databaseModule(DatabaseModule(this))
+            .build()
             .inject(this)
     }
 
