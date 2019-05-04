@@ -15,6 +15,11 @@
     </fragment>
 
     <fragment
+        android:id="@+id/settingsSelectStopFragment"
+        android:name="com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment"
+        android:label="@string/search_stops" />
+
+    <fragment
         android:id="@+id/mainFragment"
         android:name="com.aib.tricitytravel.ui.mainfragment.MainFragment"
         android:label="@string/app_name"
@@ -32,11 +37,25 @@
         <action
             android:id="@+id/action_publicTransportFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_publicTransportFragment_to_stopFragment"
+            app:destination="@id/stopFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/settingsSelectStopFragment"
-        android:name="com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment"
-        android:label="@string/search_stops" />
+        android:id="@+id/stopFragment"
+        android:name="com.aib.tricitytravel.ui.publictransportfragment.StopFragment"
+        android:label="{stopDesc}"
+        tools:layout="@layout/fragment_stop">
+        <argument
+            android:name="stopId"
+            app:argType="integer" />
+        <argument
+            android:name="stopDesc"
+            app:argType="string" />
+        <argument
+            android:name="routeIds"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

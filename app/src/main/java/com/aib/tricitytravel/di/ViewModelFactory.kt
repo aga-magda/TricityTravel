@@ -3,6 +3,8 @@ package com.aib.tricitytravel.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aib.tricitytravel.data.StopsRepository
+import com.aib.tricitytravel.ui.publictransportfragment.PublicTransportViewModel
+import com.aib.tricitytravel.ui.publictransportfragment.StopViewModel
 import com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopViewModel
 import com.aib.tricitytravel.ui.settingsfragment.SettingsViewModel
 import javax.inject.Inject
@@ -21,6 +23,10 @@ class ViewModelFactory @Inject constructor(
                     SettingsViewModel()
                 isAssignableFrom(SettingsSelectStopViewModel::class.java) ->
                     SettingsSelectStopViewModel(stopsRepository)
+                isAssignableFrom(PublicTransportViewModel::class.java) ->
+                    PublicTransportViewModel(stopsRepository)
+                isAssignableFrom(StopViewModel::class.java) ->
+                    StopViewModel(stopsRepository)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }

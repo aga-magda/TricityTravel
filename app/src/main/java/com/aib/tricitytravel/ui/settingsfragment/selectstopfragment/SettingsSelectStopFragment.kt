@@ -72,12 +72,11 @@ class SettingsSelectStopFragment : Fragment(), SettingsSelectStopRecyclerAdapter
     }
 
     override fun onStopClick(position: Int) {
-        Toast.makeText(context, stopItems[position].stopDesc, Toast.LENGTH_SHORT).show()
         openDialog(position)
     }
 
     private fun setupViewModel() {
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
         observeStopItems()

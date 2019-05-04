@@ -1,5 +1,6 @@
 package com.aib.tricitytravel.data.dto
 
+import com.aib.tricitytravel.data.dto.api.Delay
 import com.aib.tricitytravel.ui.publictransportfragment.DelayStatus
 import com.aib.tricitytravel.util.PublicTransportUtils
 
@@ -29,5 +30,17 @@ data class PublicTransportItem(
         delayInSeconds,
         delay = PublicTransportUtils.calculateDelayFrom(delayInSeconds),
         delayStatus = PublicTransportUtils.getDelayStatusFrom(delayInSeconds)
+    )
+
+    constructor(
+        delay: Delay,
+        stopDesc: String
+    ) : this(
+        delay.routeId,
+        stopDesc,
+        delay.headsign,
+        delay.theoreticalTime,
+        delay.estimatedTime,
+        delay.delayInSeconds.toInt()
     )
 }

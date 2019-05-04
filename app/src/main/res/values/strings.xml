@@ -19,4 +19,9 @@
     <string name="refresh_stops">Refresh stops</string>
     <string name="choose_bus_number">Choose bus number</string>
     <string name="save">Save</string>
+    <string name="currently_no_buses">Currently no buses</string>
+    <string name="add_stops_in_settings">Add stops in settings</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="do_you_really_want_to_delete">Do you really want to delete?</string>
 </resources>

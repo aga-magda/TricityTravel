@@ -41,7 +41,7 @@ class SettingsFragment : Fragment() {
     }
 
     private fun setupViewModel() {
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
     }
 

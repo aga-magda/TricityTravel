@@ -1,9 +1,6 @@
 package com.aib.tricitytravel.data.db
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.aib.tricitytravel.data.dto.FavoriteStop
 
 @Dao
@@ -14,4 +11,7 @@ interface FavoriteStopsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertFavoriteStops(vararg stops: FavoriteStop)
+
+    @Delete
+    suspend fun deleteFavoriteStops(vararg stops: FavoriteStop)
 }

@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="android.view.View" />
-
         <variable
             name="viewModel"
-            type="com.aib.tricitytravel.ui.publictransportfragment.PublicTransportViewModel" />
+            type="com.aib.tricitytravel.ui.publictransportfragment.StopViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.publictransportfragment.PublicTransportFragment">
+        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/publicTransportRecyclerView"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/stopSwipeRefreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:isLoadingGone="@{viewModel.isLoading}" />
+            app:refreshing="@{viewModel.isRefreshing}"
+            tools:context=".ui.publictransportfragment.StopFragment">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/stopRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isLoadingGone="@{viewModel.isLoading}" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
         <TextView
             style="@style/centeredInfo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:isLoading="@{viewModel.isLoading}"
-            android:showIfZero="@{viewModel.stopItems}"
-            android:text="@string/add_stops_in_settings" />
+            android:showIfZero="@{viewModel.publicTransportItems}"
+            android:text="@string/currently_no_buses" />
 
         <ProgressBar
             android:layout_width="@dimen/progress_indicator_size"

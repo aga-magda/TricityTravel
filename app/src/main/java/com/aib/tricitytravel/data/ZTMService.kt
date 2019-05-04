@@ -8,5 +8,5 @@ import retrofit2.http.Query
 interface ZTMService {
 
     @GET("delays")
-    fun getEstimatedTimes(@Query("stopId") stopId: String): Deferred<EstimatedTimes>
+    fun getEstimatedTimesAsync(@Query("stopId") stopId: Int): Deferred<EstimatedTimes>
 }

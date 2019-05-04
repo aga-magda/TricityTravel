@@ -18,4 +18,9 @@
     <string name="refresh_stops">Odśwież przystanki</string>
     <string name="choose_bus_number">Wybierz linie</string>
     <string name="save">Zapisz</string>
+    <string name="currently_no_buses">Obecnie brak przejazdów</string>
+    <string name="add_stops_in_settings">Dodaj przystanki w ustawieniach</string>
+    <string name="no">Nie</string>
+    <string name="yes">Tak</string>
+    <string name="do_you_really_want_to_delete">Czy na pewno chcesz usunąć?</string>
 </resources>

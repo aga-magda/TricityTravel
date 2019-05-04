@@ -11,9 +11,9 @@ class PublicTransportUtils {
 
         fun getDelayStatusFrom(delayInSeconds: Int): DelayStatus {
             return when (delayInSeconds) {
-                in Int.MIN_VALUE..-2 -> DelayStatus.AHEAD_OF_TIME
-                in -1..1 -> DelayStatus.ON_TIME
-                in 1..Int.MAX_VALUE -> DelayStatus.DELAYED
+                in Int.MIN_VALUE..-61 -> DelayStatus.AHEAD_OF_TIME
+                in -60..30 -> DelayStatus.ON_TIME
+                in 31..Int.MAX_VALUE -> DelayStatus.DELAYED
                 else -> throw IndexOutOfBoundsException("Delay is out of range.")
             }
         }
@@ -27,7 +27,15 @@ class PublicTransportUtils {
         }
 
         fun calculateDelayFrom(delayInSeconds: Int): String {
-            return "${TimeUnit.SECONDS.toMinutes(delayInSeconds.toLong())} min"
+            val minutes = TimeUnit.SECONDS.toMinutes(delayInSeconds.toLong())
+            return "$minutes min ${delayInSeconds - (60 * minutes)} s"
+        }
+
+        fun getImageResource(routeId: String): Int {
+            return if (routeId.length >= 3)
+                R.drawable.ic_bus
+            else
+                R.drawable.ic_tram
         }
     }
 }

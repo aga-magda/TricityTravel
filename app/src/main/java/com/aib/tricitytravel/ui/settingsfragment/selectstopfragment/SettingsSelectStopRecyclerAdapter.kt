@@ -10,9 +10,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aib.tricitytravel.R
 import com.aib.tricitytravel.data.dto.api.Stop
-import kotlinx.android.synthetic.main.public_transport_item.view.directionsText
-import kotlinx.android.synthetic.main.public_transport_item.view.routeIdsText
-import kotlinx.android.synthetic.main.public_transport_item.view.stopDescText
+import kotlinx.android.synthetic.main.stop_item.view.directionsText
+import kotlinx.android.synthetic.main.stop_item.view.routeIdsText
+import kotlinx.android.synthetic.main.stop_item.view.stopDescText
 import kotlinx.android.synthetic.main.settings_stop_item.view.*
 
 class SettingsSelectStopRecyclerAdapter(

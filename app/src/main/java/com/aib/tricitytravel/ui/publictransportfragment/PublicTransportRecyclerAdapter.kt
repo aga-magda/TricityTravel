@@ -1,60 +1,63 @@
 package com.aib.tricitytravel.ui.publictransportfragment
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.aib.tricitytravel.R
-import com.aib.tricitytravel.data.dto.PublicTransportItem
-import com.aib.tricitytravel.util.PublicTransportUtils
-import kotlinx.android.synthetic.main.public_transport_item.view.*
+import com.aib.tricitytravel.data.dto.FavoriteStop
+import kotlinx.android.synthetic.main.stop_list_item.view.*
 
 class PublicTransportRecyclerAdapter(
-    private val dataSet: List<PublicTransportItem>
+    private val dataSet: MutableList<FavoriteStop>,
+    private val onStopListener: OnStopListener
 ) : RecyclerView.Adapter<PublicTransportRecyclerAdapter.PublicTransportViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PublicTransportViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.public_transport_item, parent, false)
-        return PublicTransportViewHolder(itemView)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.stop_list_item, parent, false)
+        return PublicTransportViewHolder(itemView, onStopListener)
     }
 
     override fun onBindViewHolder(holder: PublicTransportViewHolder, position: Int) {
-        holder.routeIdTextView?.text = dataSet[position].routeId
         holder.stopDescTextView?.text = dataSet[position].stopDesc
-        holder.headSignTextView?.text = dataSet[position].headSign
-        holder.theoreticalTimeTextView?.text = dataSet[position].theoreticalTime
-        holder.delayTextView?.text = dataSet[position].delay
-        holder.estimatedTimesTextView?.text = dataSet[position].estimatedTime
-        holder.delayStatusTextView?.text = PublicTransportUtils.getDelayStatusDescription(dataSet[position].delayStatus)
-
-        when (dataSet[position].delayStatus) {
-            DelayStatus.AHEAD_OF_TIME -> holder.delayStatusTextView?.setTextColor(Color.YELLOW)
-            DelayStatus.ON_TIME -> holder.delayStatusTextView?.setTextColor(Color.GREEN)
-            DelayStatus.DELAYED -> holder.delayStatusTextView?.setTextColor(Color.RED)
-        }
+        holder.directionsTextView?.text = dataSet[position].directions.joinToString()
+        holder.routeIdsTextView?.text = dataSet[position].routeIds.joinToString()
     }
 
     override fun getItemCount() = dataSet.size
 
-    class PublicTransportViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var routeIdTextView: TextView? = null
+    class PublicTransportViewHolder(itemView: View, onStopListener: OnStopListener) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener, View.OnLongClickListener {
+
         var stopDescTextView: TextView? = null
-        var headSignTextView: TextView? = null
-        var theoreticalTimeTextView: TextView? = null
-        var delayTextView: TextView? = null
-        var estimatedTimesTextView: TextView? = null
-        var delayStatusTextView: TextView? = null
+        var directionsTextView: TextView? = null
+        var routeIdsTextView: TextView? = null
+
+        var onStopListener: OnStopListener? = null
 
         init {
-            routeIdTextView = itemView.routeIdsText
             stopDescTextView = itemView.stopDescText
-            headSignTextView = itemView.directionsText
-            theoreticalTimeTextView = itemView.theoreticalTimeText
-            delayTextView = itemView.delayText
-            estimatedTimesTextView = itemView.estimatedTimeText
-            delayStatusTextView = itemView.delayStatusText
+            directionsTextView = itemView.directionsText
+            routeIdsTextView = itemView.routeIdsText
+
+            this.onStopListener = onStopListener
+            itemView.setOnClickListener(this)
+            itemView.setOnLongClickListener(this)
         }
+
+        override fun onClick(v: View?) {
+            onStopListener?.onStopClick(adapterPosition)
+        }
+
+        override fun onLongClick(v: View?): Boolean {
+            onStopListener?.onStopLongClick(adapterPosition)
+            return true
+        }
+    }
+
+    interface OnStopListener {
+        fun onStopClick(position: Int)
+        fun onStopLongClick(position: Int)
     }
 }
