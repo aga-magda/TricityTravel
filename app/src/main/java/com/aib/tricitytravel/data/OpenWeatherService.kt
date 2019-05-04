@@ -5,8 +5,13 @@
 
 package com.aib.tricitytravel.data
 
-object URLs {
-    const val ZTM_DOMAIN = "http://87.98.237.99:88/"
-    const val FIREBASE_DOMAIN = "https://us-central1-easyztm-55221.cloudfunctions.net/"
-    const val OPEN_WEATHER_DOMAIN = "https://api.openweathermap.org/"
+import com.aib.tricitytravel.data.dto.api.WeatherResponse
+import kotlinx.coroutines.Deferred
+import retrofit2.http.GET
+import retrofit2.http.Query
+
+interface OpenWeatherService {
+
+    @GET("data/2.5/weather?lang=pl&units=metric&appId=${APIKeys.OPEN_WEATHER_KEY}&")
+    fun getWeatherAsync(@Query("q") city: String): Deferred<WeatherResponse>
 }

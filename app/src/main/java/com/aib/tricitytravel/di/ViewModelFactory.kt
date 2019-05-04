@@ -8,16 +8,19 @@ package com.aib.tricitytravel.di
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.aib.tricitytravel.data.StopsRepository
+import com.aib.tricitytravel.data.WeatherRepository
 import com.aib.tricitytravel.ui.publictransportfragment.PublicTransportViewModel
 import com.aib.tricitytravel.ui.publictransportfragment.StopViewModel
 import com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopViewModel
 import com.aib.tricitytravel.ui.settingsfragment.SettingsViewModel
+import com.aib.tricitytravel.ui.weatherfragment.WeatherViewModel
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 class ViewModelFactory @Inject constructor(
-    private val stopsRepository: StopsRepository
+    private val stopsRepository: StopsRepository,
+    private val weatherRepository: WeatherRepository
 ) : ViewModelProvider.Factory {
 
     @Suppress("UNCHECKED_CAST")
@@ -32,6 +35,8 @@ class ViewModelFactory @Inject constructor(
                     PublicTransportViewModel(stopsRepository)
                 isAssignableFrom(StopViewModel::class.java) ->
                     StopViewModel(stopsRepository)
+                isAssignableFrom(WeatherViewModel::class.java) ->
+                    WeatherViewModel(weatherRepository)
                 else ->
                     throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
             }

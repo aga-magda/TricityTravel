@@ -7,6 +7,7 @@ package com.aib.tricitytravel.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.aib.tricitytravel.data.StopsRepository
+import com.aib.tricitytravel.data.WeatherRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -17,8 +18,9 @@ class ViewModelModule {
     @Provides
     @Singleton
     fun provideViewModelFactory(
-        stopsRepository: StopsRepository
+        stopsRepository: StopsRepository,
+        weatherRepository: WeatherRepository
     ): ViewModelProvider.Factory {
-        return ViewModelFactory(stopsRepository)
+        return ViewModelFactory(stopsRepository, weatherRepository)
     }
 }

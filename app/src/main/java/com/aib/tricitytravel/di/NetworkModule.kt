@@ -6,6 +6,7 @@
 package com.aib.tricitytravel.di
 
 import com.aib.tricitytravel.data.FirebaseService
+import com.aib.tricitytravel.data.OpenWeatherService
 import com.aib.tricitytravel.data.URLs
 import com.aib.tricitytravel.data.ZTMService
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
@@ -17,6 +18,17 @@ import javax.inject.Singleton
 
 @Module
 class NetworkModule {
+
+    @Singleton
+    @Provides
+    fun provideOpenWeatherService(): OpenWeatherService {
+        return Retrofit.Builder()
+            .baseUrl(URLs.OPEN_WEATHER_DOMAIN)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .build()
+            .create(OpenWeatherService::class.java)
+    }
 
     @Singleton
     @Provides

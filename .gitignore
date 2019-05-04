@@ -7,3 +7,4 @@ local.properties
 /captures
 .externalNativeBuild
 /app/google-services.json
+/app/src/main/java/com/aib/tricitytravel/data/APIKeys.kt

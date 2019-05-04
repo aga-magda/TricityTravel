@@ -10,6 +10,7 @@ import com.aib.tricitytravel.ui.publictransportfragment.PublicTransportFragment
 import com.aib.tricitytravel.ui.publictransportfragment.StopFragment
 import com.aib.tricitytravel.ui.settingsfragment.SettingsFragment
 import com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment
+import com.aib.tricitytravel.ui.weatherfragment.WeatherFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -30,4 +31,7 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributeSettingsSelectStopFragmentInjector(): SettingsSelectStopFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeWeatherFragmentInjector(): WeatherFragment
 }

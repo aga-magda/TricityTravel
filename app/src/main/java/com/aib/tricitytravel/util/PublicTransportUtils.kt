@@ -16,9 +16,9 @@ class PublicTransportUtils {
 
         fun getDelayStatusFrom(delayInSeconds: Int): DelayStatus {
             return when (delayInSeconds) {
-                in Int.MIN_VALUE..-61 -> DelayStatus.AHEAD_OF_TIME
-                in -60..30 -> DelayStatus.ON_TIME
-                in 31..Int.MAX_VALUE -> DelayStatus.DELAYED
+                in Int.MIN_VALUE..-31 -> DelayStatus.AHEAD_OF_TIME
+                in -30..60 -> DelayStatus.ON_TIME
+                in 61..Int.MAX_VALUE -> DelayStatus.DELAYED
                 else -> throw IndexOutOfBoundsException("Delay is out of range.")
             }
         }

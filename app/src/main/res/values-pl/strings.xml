@@ -28,4 +28,10 @@
     <string name="no">Nie</string>
     <string name="yes">Tak</string>
     <string name="do_you_really_want_to_delete">Czy na pewno chcesz usunąć?</string>
+    <string name="refresh">Odśwież</string>
+    <string name="humidity">Wilgotność</string>
+    <string name="wind">Wiatr</string>
+    <string name="weather_settings">Ustawienia pogody</string>
+    <string name="city_changed">Zmieniono miasto</string>
+    <string name="city">Miasto</string>
 </resources>

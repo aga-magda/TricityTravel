@@ -29,4 +29,10 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="do_you_really_want_to_delete">Do you really want to delete?</string>
+    <string name="refresh">Refresh</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="weather_settings">Weather settings</string>
+    <string name="city_changed">City changed</string>
+    <string name="city">City</string>
 </resources>
