@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
   ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
   -->
@@ -14,5 +13,10 @@
         android:id="@+id/publicTransportFragment"
         android:icon="@drawable/ic_tram"
         android:title="@string/public_transport" />
+
+    <item
+        android:id="@+id/carFragment"
+        android:icon="@drawable/ic_car"
+        android:title="@string/car" />
 
 </menu>

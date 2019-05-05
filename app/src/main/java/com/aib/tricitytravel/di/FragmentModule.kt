@@ -5,6 +5,7 @@
 
 package com.aib.tricitytravel.di
 
+import com.aib.tricitytravel.ui.carfragment.CarFragment
 import com.aib.tricitytravel.ui.mainfragment.MainFragment
 import com.aib.tricitytravel.ui.publictransportfragment.PublicTransportFragment
 import com.aib.tricitytravel.ui.publictransportfragment.StopFragment
@@ -34,4 +35,7 @@ abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract fun contributeWeatherFragmentInjector(): WeatherFragment
+
+    @ContributesAndroidInjector
+    abstract fun contributeCarFragmentInjector(): CarFragment
 }

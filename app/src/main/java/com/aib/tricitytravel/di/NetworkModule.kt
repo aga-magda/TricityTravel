@@ -5,10 +5,8 @@
 
 package com.aib.tricitytravel.di
 
-import com.aib.tricitytravel.data.FirebaseService
-import com.aib.tricitytravel.data.OpenWeatherService
-import com.aib.tricitytravel.data.URLs
-import com.aib.tricitytravel.data.ZTMService
+import com.aib.tricitytravel.data.*
+import com.aib.tricitytravel.data.service.*
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -18,6 +16,28 @@ import javax.inject.Singleton
 
 @Module
 class NetworkModule {
+
+    @Singleton
+    @Provides
+    fun provideHereGeocoderService(): HereGeocoderService {
+        return Retrofit.Builder()
+            .baseUrl(URLs.HERE_GEOCODER_DOMAIN)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .build()
+            .create(HereGeocoderService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideHereRouteService(): HereRouteService {
+        return Retrofit.Builder()
+            .baseUrl(URLs.HERE_ROUTE_DOMAIN)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .build()
+            .create(HereRouteService::class.java)
+    }
 
     @Singleton
     @Provides

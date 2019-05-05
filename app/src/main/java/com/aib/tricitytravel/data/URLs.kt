@@ -9,4 +9,6 @@ object URLs {
     const val ZTM_DOMAIN = "http://87.98.237.99:88/"
     const val FIREBASE_DOMAIN = "https://us-central1-easyztm-55221.cloudfunctions.net/"
     const val OPEN_WEATHER_DOMAIN = "https://api.openweathermap.org/"
+    const val HERE_GEOCODER_DOMAIN = "https://geocoder.api.here.com/"
+    const val HERE_ROUTE_DOMAIN = "https://route.api.here.com/"
 }

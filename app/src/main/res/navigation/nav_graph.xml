@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
   ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
   -->
@@ -13,7 +12,8 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.aib.tricitytravel.ui.settingsfragment.SettingsFragment"
-        android:label="@string/settings">
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_settingsSelectStopFragment"
             app:destination="@id/settingsSelectStopFragment" />
@@ -22,7 +22,8 @@
     <fragment
         android:id="@+id/settingsSelectStopFragment"
         android:name="com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment"
-        android:label="@string/search_stops" />
+        android:label="@string/search_stops"
+        tools:layout="@layout/fragment_settings_select_stop" />
 
     <fragment
         android:id="@+id/mainFragment"
@@ -61,6 +62,16 @@
         <argument
             android:name="routeIds"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.aib.tricitytravel.ui.carfragment.CarFragment"
+        android:label="@string/car"
+        tools:layout="@layout/fragment_car">
+        <action
+            android:id="@+id/action_carFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
 </navigation>

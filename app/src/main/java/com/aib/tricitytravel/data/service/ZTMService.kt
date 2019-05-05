@@ -3,14 +3,15 @@
  * This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
  */
 
-package com.aib.tricitytravel.data
+package com.aib.tricitytravel.data.service
 
-import com.aib.tricitytravel.data.dto.api.Stops
+import com.aib.tricitytravel.data.dto.api.EstimatedTimes
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
+import retrofit2.http.Query
 
-interface FirebaseService {
+interface ZTMService {
 
-    @GET("downloadBusStopsFromFirebase")
-    fun getStopsFromFirebaseAsync(): Deferred<Stops>
+    @GET("delays")
+    fun getEstimatedTimesAsync(@Query("stopId") stopId: Int): Deferred<EstimatedTimes>
 }

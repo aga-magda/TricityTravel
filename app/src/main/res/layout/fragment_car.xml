@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
+  ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="startLocation"
+            type="String" />
+
+        <variable
+            name="endLocation"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="com.aib.tricitytravel.ui.carfragment.CarViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="@dimen/card_view_margin"
+                tools:context=".ui.carfragment.CarFragment">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/where_are_you_travelling_today"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:hint="@string/start_location"
+                        android:text="@={startLocation}" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:hint="@string/end_location"
+                        android:text="@={endLocation}" />
+
+                    <Button
+                        style="@style/blue_button"
+                        android:onClick="@{() -> viewModel.calculateRoute(startLocation, endLocation)}"
+                        android:text="@string/time_of_travel" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_margin="@dimen/card_view_margin"
+                android:isLoadingVisible="@{viewModel.isSummaryVisible}"
+                tools:context=".ui.carfragment.CarFragment">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:isLoadingGone="@{viewModel.isLoading}"
+                        android:text="@{viewModel.summaryTime}"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        tools:text="25 min" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:isLoadingGone="@{viewModel.isLoading}"
+                        android:text="@string/car_summary" />
+
+                    <ProgressBar
+                        android:layout_width="@dimen/progress_indicator_size"
+                        android:layout_height="@dimen/progress_indicator_size"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="30dp"
+                        android:isLoadingVisible="@{viewModel.isLoading}" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

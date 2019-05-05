@@ -35,4 +35,12 @@
     <string name="weather_settings">Weather settings</string>
     <string name="city_changed">City changed</string>
     <string name="city">City</string>
+    <string name="car">Car</string>
+    <string name="where_are_you_travelling_today">Where are you travelling today?</string>
+    <string name="time_of_travel">Time of travel</string>
+    <string name="start_location">Start location</string>
+    <string name="end_location">End location</string>
+    <string name="car_summary">that\'s how much it will take you to get to your destination</string>
+    <string name="fields_cannot_be_empty">Fields cannot be empty</string>
+    <string name="incorrect_locations">Incorrect locations</string>
 </resources>

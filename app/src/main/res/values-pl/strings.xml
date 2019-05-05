@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
   ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
   -->
@@ -34,4 +33,12 @@
     <string name="weather_settings">Ustawienia pogody</string>
     <string name="city_changed">Zmieniono miasto</string>
     <string name="city">Miasto</string>
+    <string name="car">Samochód</string>
+    <string name="where_are_you_travelling_today">Gdzie dziś podróżujesz?</string>
+    <string name="time_of_travel">Czas przejazdu</string>
+    <string name="end_location">Dokąd?</string>
+    <string name="start_location">Skąd?</string>
+    <string name="car_summary">tyle zajmie tobie dojazd do miejsca docelowego</string>
+    <string name="fields_cannot_be_empty">Pola nie mogą być puste</string>
+    <string name="incorrect_locations">Niepoprawne lokalizacje</string>
 </resources>

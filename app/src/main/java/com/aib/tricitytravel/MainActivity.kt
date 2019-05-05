@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.mainFragment,
-                R.id.publicTransportFragment
+                R.id.publicTransportFragment,
+                R.id.carFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

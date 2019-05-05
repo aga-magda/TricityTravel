@@ -6,6 +6,7 @@
 package com.aib.tricitytravel.data
 
 import com.aib.tricitytravel.data.dto.api.WeatherResponse
+import com.aib.tricitytravel.data.service.OpenWeatherService
 import java.lang.Exception
 import javax.inject.Inject
 import javax.inject.Singleton

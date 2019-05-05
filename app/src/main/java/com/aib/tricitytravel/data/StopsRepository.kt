@@ -12,6 +12,8 @@ import com.aib.tricitytravel.data.db.StopsDao
 import com.aib.tricitytravel.data.dto.FavoriteStop
 import com.aib.tricitytravel.data.dto.PublicTransportItem
 import com.aib.tricitytravel.data.dto.api.Stop
+import com.aib.tricitytravel.data.service.FirebaseService
+import com.aib.tricitytravel.data.service.ZTMService
 import javax.inject.Inject
 import javax.inject.Singleton
 
