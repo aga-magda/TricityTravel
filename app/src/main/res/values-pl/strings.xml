@@ -41,4 +41,5 @@
     <string name="car_summary">tyle zajmie tobie dojazd do miejsca docelowego</string>
     <string name="fields_cannot_be_empty">Pola nie mogą być puste</string>
     <string name="incorrect_locations">Niepoprawne lokalizacje</string>
+    <string name="report">Raport</string>
 </resources>

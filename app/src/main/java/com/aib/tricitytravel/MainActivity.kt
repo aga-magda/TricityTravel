@@ -41,7 +41,8 @@ class MainActivity : AppCompatActivity(), HasSupportFragmentInjector {
             setOf(
                 R.id.mainFragment,
                 R.id.publicTransportFragment,
-                R.id.carFragment
+                R.id.carFragment,
+                R.id.trojmiastoFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

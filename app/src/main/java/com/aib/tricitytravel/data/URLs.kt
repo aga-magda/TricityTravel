@@ -11,4 +11,5 @@ object URLs {
     const val OPEN_WEATHER_DOMAIN = "https://api.openweathermap.org/"
     const val HERE_GEOCODER_DOMAIN = "https://geocoder.api.here.com/"
     const val HERE_ROUTE_DOMAIN = "https://route.api.here.com/"
+    const val TROJMIASTO_REPORT = "https://www.trojmiasto.pl/raport/"
 }

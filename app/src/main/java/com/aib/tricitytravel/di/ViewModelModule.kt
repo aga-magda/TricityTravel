@@ -8,6 +8,7 @@ package com.aib.tricitytravel.di
 import androidx.lifecycle.ViewModelProvider
 import com.aib.tricitytravel.data.MapsRepository
 import com.aib.tricitytravel.data.StopsRepository
+import com.aib.tricitytravel.data.TrojmiastoRepository
 import com.aib.tricitytravel.data.WeatherRepository
 import dagger.Module
 import dagger.Provides
@@ -21,8 +22,9 @@ class ViewModelModule {
     fun provideViewModelFactory(
         stopsRepository: StopsRepository,
         weatherRepository: WeatherRepository,
-        mapsRepository: MapsRepository
+        mapsRepository: MapsRepository,
+        trojmiastoRepository: TrojmiastoRepository
     ): ViewModelProvider.Factory {
-        return ViewModelFactory(stopsRepository, weatherRepository, mapsRepository)
+        return ViewModelFactory(stopsRepository, weatherRepository, mapsRepository, trojmiastoRepository)
     }
 }

@@ -74,4 +74,14 @@
             app:destination="@id/settingsFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/trojmiastoFragment"
+        android:name="com.aib.tricitytravel.ui.trojmiastofragment.TrojmiastoFragment"
+        android:label="@string/report"
+        tools:layout="@layout/fragment_trojmiasto">
+        <action
+            android:id="@+id/action_trojmiastoFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
 </navigation>

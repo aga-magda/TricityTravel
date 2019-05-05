@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
+  ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.aib.tricitytravel.ui.trojmiastofragment.TrojmiastoViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.trojmiastofragment.TrojmiastoFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trojmiastoRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isLoadingGone="@{viewModel.isLoading}" />
+
+        <ProgressBar
+            android:layout_width="@dimen/progress_indicator_size"
+            android:layout_height="@dimen/progress_indicator_size"
+            android:layout_gravity="center"
+            android:isLoadingVisible="@{viewModel.isLoading}"
+            tools:visibility="gone" />
+
+    </FrameLayout>
+
+</layout>
