@@ -173,6 +173,46 @@ Prowadzący ma prawo przekazywać projekt innym studentom w celu dzielenia się 
 #### Odpowiedź systemu:  
 1. Subiektywnie szybkie (do 1s) wyświetlenie widoku.
 
+## 4. Instrukcja instalacji i uruchomienia
+### 4.1 Instalacja aplikacji na urządzeniu mobilnym w celu testowym
+1. Skopiowanie pliku .apk z folderu /apk projektu na urządzenie mobilne z systemem Android w wersji 6.0 lub wyższej,
+2. Wyszukanie pliku na urządzaniu mobilnym i instalacja aplikacji,
+3. (Opcjonalnie) Zezwolenie na instalację aplikacji z nieznanych źródeł.
+
+### 4.2 Uruchomienie projektu w celu dalszego rozwoju
+1. Pobranie i instalacja programu Android Studio w wersji 3.4 lub wyższej,
+2. Rozpaknowanie pliku .zip, lub sklonowanie projektu z serwisu GitHub do dowolnej lokalizacji na komputerze,
+3. W Android Studio wybranie opcji File/Open i wskazanie rozpakowanego projektu. Android Studio automatycznie pobierze wszystkie wymagane biblioteki i skompiluje projekt,
+4. Utworzenie bezpłatnych kont w serwisach https://openweathermap.org/ oraz https://developer.here.com/ i wygenerowanie kluczy API,
+5. W folderze \app\src\main\java\com\aib\tricitytravel\data utworzenie pliku APIKeys.kt o zawartości podanej poniżej oraz zamiana odpowiednich pól na własne, wygenerowane wcześniej, klucze API,
+```kotlin
+package com.aib.tricitytravel.data
+
+object APIKeys {
+
+    const val OPEN_WEATHER_KEY = "<tu wkleić klucz OpenWeatherMap>"
+    const val HERE_APP_ID = "<tu wkleić klucz Here App ID>"
+    const val HERE_APP_CODE = "<tu wkleić klucz Here App Code>"
+}
+```
+6. Utworzenie bezpłatnego konta w serwisie https://firebase.google.com/,
+7. Utworzenie projektu o dowolnej nazwie w serwisie Firebase i postępowanie zgodnie z instrukcjami w celu podłączenia projektu w Android Studio z projektem w Firebase,
+8. Wdrożenie cloud function z folderu /firebase_cloud_functions w utworzonym projekcie Firebase zgodnie z instrukcją na stronie https://cloud.google.com/functions/docs/deploying/filesystem,
+9. Podmiana odnośnika "FIREBASE_DOMAIN" w pliku /data/URLs.kt na własny znajdujący się w zakładce "Functions" w serwisie Firebase,
+```kotlin
+package com.aib.tricitytravel.data
+
+object URLs {
+    const val ZTM_DOMAIN = "http://87.98.237.99:88/"
+    const val FIREBASE_DOMAIN = "<tu wkleić własny link do cloud function downloadBusStopsFromFirebase>"
+    const val OPEN_WEATHER_DOMAIN = "https://api.openweathermap.org/"
+    const val HERE_GEOCODER_DOMAIN = "https://geocoder.api.here.com/"
+    const val HERE_ROUTE_DOMAIN = "https://route.api.here.com/"
+    const val TROJMIASTO_REPORT = "https://www.trojmiasto.pl/raport/"
+}
+```
+10. W Android Studio kliknięcie Run/Run 'app' i wybranie emulatora lub fizycznego urządzenia w celu uruchomienia aplikacji.
+
 ## 5. Uwagi ogólne
 
 ### 5.1 Licencja
