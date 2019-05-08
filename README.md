@@ -1,80 +1,56 @@
 # TricityTravel
 
 ## 1. Specyfikacja wymagań
-### 1.1. Nazwa projektu
-TricityTravel - asystent podróży po Trójmieście
+### 1.1. Opis systemu
+#### 1.1.1. Nazwa
+Nazwa ogólna: TricityTravel - asystent podróży po Trójmieście  
+Nazwa krótka: TricityTravel
 
-### 1.2. Struktura zespołu
+#### 1.1.2. Uczestnicy
 1. Agnieszka Maciejewska
 2. Maciej Królik
 3. Krzysztof Mikołajczyk
 
-### 1.3. Specyfikacja funkcjonalna
-#### 1.3.1. Idea projektu
-Aplikacja mobilna ułatwiająca poruszanie się po Trójmieście.
+#### 1.1.3. Charakterystyka
+Aplikacja mobilna ułatwiająca podejmowanie decyzji o poruszaniu się po Trójmieście. Uwzględnia wskazówki do podróży komunikacją miejską, poruszania się autem oraz wskazuje aktualną pogodę.
 
-#### 1.3.2 Cel biznesowy projektu
-Stworzenie darmowej aplikacji mobilnej, której atrakcyjne funkcjonalności przyciągną jak największą liczbę użytkowników.
+###  1.2. Specyfikacja właściwa - historyjki użytkowników
+W1. Osoba zainteresowana TricityTravel [kto] w ramach dedykowanej platformy sprzedażowej po uprzednim zalogowaniu się na koncie Google [gdzie] może pobrać aplikację na swoje urządzenie mobilne z systemem Android w wersji minimum 6.0 [co]
 
-#### 1.3.3. Zakres prac
-1. Stworzenie dokumentacji projektu.
-2. Wyszukanie i uzyskanie dostępu do niezbędnych informacji i/lub baz danych.
-3. Przetworzanie pozyskanych danych do postaci możliwej do wykorzystania w aplikacji.
-4. Zaprojektowanie (UX) i zaprogramowanie interfejsu aplikacji.
-5. Zaprogramowanie funkcjonalności aplikacji.
+W2. Użytkownik aplikacji TricityTravel [kto] w zakładce z ustawieniami [gdzie] może spersonalizować swoje ustawienia dotyczące poruszania się po Trójmieście (ustawienia pogody; przystanków, z których korzysta użytkownik; wybranej trasy w podróży samochodem; ustawienia tagów do poboru informacji z Trójmiasto.pl) [co].
 
-#### 1.3.4. Funkcje systemu
-1. Personalizacja ustawień użytkownika.
-2. Wyświetlanie informacji o utrudnieniach w transporcie.
-3. Wyświetlanie informacji meteorologicznych.
+W3. Użytkownik aplikacji TricityTravel [kto] w zakładce "Samochód" [gdzie] wyświetla czas najkrótszego przejazdu od podanego punktu A do B na podstawie danych Here Maps [co].
 
-#### 1.3.5. Interakcje pomiędzy systemem, a użytkownikiem
-1. Jako użytkownik mogę spersonalizować ustawienia, aby móc dopasować wyszukiwane informacje o utrudnieniach w ruchu do moich preferencji.
+W4. Użytkownik aplikacji TricityTravel [kto] w zakładce "Transport publiczny" [gdzie] wyświetla listę linii transportu publicznego w połączeniu z przystankami, które zostały wybrane w ustawieniach oraz informacje na temat rzeczywistych czasów przyjazdu danego pojazdu na podstawie Otwartych Danych ZTM Gdańsk [co].
 
-2. Jako użytkownik mogę wyszukać informacje o opóźnieniach komunikacji miejskiej, aby wiedzieć jak zmienić swoją trasę, by dotrzeć do celu na czas.
+W5. Użytkownik aplikacji TricityTravel [kto] w zakładce "Pogoda" [gdzie] wyświetla informacje meteorologiczne w wybranym w ustawieniach mieście na podstawie danych OpenWeatherMap [co].
 
-3. Jako użytkownik mogę wyszukać informacje o wydarzeniach losowych, które mogą wpłynąć na podróż samochodem, aby wiedzieć jak zmienić swoją trasę, by dotrzeć do celu na czas.
+W6. Użytkownik aplikacji TricityTravel [kto] w zakładce "Raport" [gdzie] wyświetla informacje z Raportu Trójmiasto (trojmiasto.pl) o utrudnieniach w poruszaniu się po Trójmieście na podstawie tagów (słów kluczowych) wybranych przez użytkownika [co].
 
-4. Jako użytkownik mogę dowiedzieć się o warunkach meteorologicznych na zewnątrz, aby móc się odpowiednio ubrać lub przygotować do poróży.
+![Use cases diagram](/documentation/use_cases_diagram.png)
 
-![Use cases diagram](/documentation/use_case_diagram.png)
+## 2. Projekt
+### 2.1. Możliwość instalacji i przekazania projektu
+Prowadzący ma prawo przekazywać projekt innym studentom w celu dzielenia się wiedzą.
 
-## 2. Architektura aplikacji
+### 2.2. Diagram czynności UML
+![Use cases diagram](/documentation/activity_diagram.png)
 
-### 2.1. Stosowane technologie
-* Android
-* Firebase
-  * Cloud Functions
-  * Cloud Firestore
+### 2.3. Diagram komponentów i wdrożenia
+![Use cases diagram](/documentation/components_diagram.png)
 
-### 2.2. IDE
-* Android Studio
-* Visual Studio Code
 
-### 2.3. System operacyjny
-* Linux
-* Mac
-* Windows
+## 3. Scenariusze testów - testy akceptacyjne
+### 3.1. T1 - Instalacja aplikacji
+**Scenariusz dotyczy:** W1  
+**Cel testu:** Testowanie poprawnego pobierania oraz instalowania aplikacji TricictyTravel na urządzeniu mobilnym.
+**Sposób dostępu:** Widok wywoływany 
+**Scenariusz (kroki testowe):** 
+#### Akcje użytkownika:
+1. 
 
-### 2.4. Język
-* Kotlin 
-* Java
-* TypeScript/JavaScript
-
-### 2.5. Biblioteki
-* Dagger 2
-* Retrofit 2
-* Jsoup
-* Android Architecture Components
-* Room
-
-### 2.6 Bazy danych
-* SQLite
-* Cloud Firestore
-
-### 2.7. Inne
-* Github
-* Discord
+#### Odpowiedź systemu: 
+1. 
 
 ## 3. Licencja
 ```
