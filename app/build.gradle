@@ -53,12 +53,12 @@ dependencies {
     // jsoup
     implementation 'org.jsoup:jsoup:1.11.3'
     // Room
-    implementation "androidx.room:room-runtime:2.1.0-alpha06"
-    kapt "androidx.room:room-compiler:2.1.0-alpha06"
-    implementation "androidx.room:room-ktx:2.1.0-alpha06"
+    implementation "androidx.room:room-runtime:2.1.0-beta01"
+    kapt "androidx.room:room-compiler:2.1.0-beta01"
+    implementation "androidx.room:room-ktx:2.1.0-beta01"
     // Navigation component
-    implementation "androidx.navigation:navigation-fragment-ktx:2.1.0-alpha01"
-    implementation "androidx.navigation:navigation-ui-ktx:2.1.0-alpha01"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.1.0-alpha03"
+    implementation "androidx.navigation:navigation-ui-ktx:2.1.0-alpha03"
     // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0-alpha04"
     // Preference
@@ -69,6 +69,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'androidx.core:core-ktx:1.1.0-alpha05'
+    implementation 'androidx.core:core-ktx:1.1.0-beta01'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.27.0'
 }
