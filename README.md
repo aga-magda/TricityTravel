@@ -215,7 +215,13 @@ object URLs {
 
 ## 5. Uwagi ogólne
 
-### 5.1 Licencja
+### 5.1 Skrótowy opis głównych pakietów
+ - data - zawiera klasy odpowiedzialne za pobieranie danych z web service'ów, zapisywanie w lokalnej bazie danych, a także wszystkie modele i obiekty DTO (Data Transfer Objects),
+ - di - zawiera moduły i komponenty wykorzystywane przez bibliotekę Dagger 2 potrzebne do wstrzykiwania zależności (Dependency Injection),
+ - ui - zawiera wszystkie klasy widoków w aplikacji, wewnątrz pakietu zastosowany jest dodatkowy podział według zasady "package by feature",
+ - util - zawiera klasy pomocnicze m. in. wykorzystywane w data binding.
+
+### 5.2 Licencja
 ```
 Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
 This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
