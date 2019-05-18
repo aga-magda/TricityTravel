@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_settingsFragment_to_settingsSelectStopFragment"
             app:destination="@id/settingsSelectStopFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_settingsChooseKeywordFragment"
+            app:destination="@id/settingsChooseKeywordFragment" />
     </fragment>
 
     <fragment
@@ -24,6 +27,12 @@
         android:name="com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment"
         android:label="@string/search_stops"
         tools:layout="@layout/fragment_settings_select_stop" />
+
+    <fragment
+        android:id="@+id/settingsChooseKeywordFragment"
+        android:name="com.aib.tricitytravel.ui.settingsfragment.choosekeywordsfragment.SettingsChooseKeywordFragment"
+        android:label="@string/edit_keyword_list"
+        tools:layout="@layout/fragment_settings_choose_keyword" />
 
     <fragment
         android:id="@+id/mainFragment"

@@ -8,6 +8,7 @@ package com.aib.tricitytravel.di
 import android.content.Context
 import androidx.room.Room
 import com.aib.tricitytravel.data.db.FavoriteStopsDao
+import com.aib.tricitytravel.data.db.KeywordsDao
 import com.aib.tricitytravel.data.db.StopsDao
 import com.aib.tricitytravel.data.db.TricityTravelDatabase
 import dagger.Module
@@ -18,6 +19,12 @@ import javax.inject.Singleton
 class DatabaseModule(
     private val context: Context
 ) {
+
+    @Singleton
+    @Provides
+    fun provideKeywordsDao(database: TricityTravelDatabase): KeywordsDao {
+        return database.keywordsDao()
+    }
 
     @Singleton
     @Provides

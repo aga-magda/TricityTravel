@@ -6,10 +6,9 @@
 package com.aib.tricitytravel.di
 
 import com.aib.tricitytravel.ui.carfragment.CarFragment
-import com.aib.tricitytravel.ui.mainfragment.MainFragment
 import com.aib.tricitytravel.ui.publictransportfragment.PublicTransportFragment
 import com.aib.tricitytravel.ui.publictransportfragment.StopFragment
-import com.aib.tricitytravel.ui.settingsfragment.SettingsFragment
+import com.aib.tricitytravel.ui.settingsfragment.choosekeywordsfragment.SettingsChooseKeywordFragment
 import com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopFragment
 import com.aib.tricitytravel.ui.trojmiastofragment.TrojmiastoFragment
 import com.aib.tricitytravel.ui.weatherfragment.WeatherFragment
@@ -20,19 +19,16 @@ import dagger.android.ContributesAndroidInjector
 abstract class FragmentModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeMainFragmentInjector(): MainFragment
-
-    @ContributesAndroidInjector
     abstract fun contributePublicTransportFragmentInjector(): PublicTransportFragment
 
     @ContributesAndroidInjector
     abstract fun contributeStopFragmentInjector(): StopFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeSettingsFragmentInjector(): SettingsFragment
+    abstract fun contributeSettingsSelectStopFragmentInjector(): SettingsSelectStopFragment
 
     @ContributesAndroidInjector
-    abstract fun contributeSettingsSelectStopFragmentInjector(): SettingsSelectStopFragment
+    abstract fun contributeSettingsChooseKeywordFragmentInjector(): SettingsChooseKeywordFragment
 
     @ContributesAndroidInjector
     abstract fun contributeWeatherFragmentInjector(): WeatherFragment

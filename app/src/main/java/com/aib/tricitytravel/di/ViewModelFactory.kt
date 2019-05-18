@@ -14,7 +14,7 @@ import com.aib.tricitytravel.data.WeatherRepository
 import com.aib.tricitytravel.ui.carfragment.CarViewModel
 import com.aib.tricitytravel.ui.publictransportfragment.PublicTransportViewModel
 import com.aib.tricitytravel.ui.publictransportfragment.StopViewModel
-import com.aib.tricitytravel.ui.settingsfragment.SettingsViewModel
+import com.aib.tricitytravel.ui.settingsfragment.choosekeywordsfragment.SettingsChooseKeywordViewModel
 import com.aib.tricitytravel.ui.settingsfragment.selectstopfragment.SettingsSelectStopViewModel
 import com.aib.tricitytravel.ui.trojmiastofragment.TrojmiastoViewModel
 import com.aib.tricitytravel.ui.weatherfragment.WeatherViewModel
@@ -33,10 +33,10 @@ class ViewModelFactory @Inject constructor(
     override fun <T : ViewModel?> create(modelClass: Class<T>): T =
         with(modelClass) {
             when {
-                isAssignableFrom(SettingsViewModel::class.java) ->
-                    SettingsViewModel()
                 isAssignableFrom(SettingsSelectStopViewModel::class.java) ->
                     SettingsSelectStopViewModel(stopsRepository)
+                isAssignableFrom(SettingsChooseKeywordViewModel::class.java) ->
+                    SettingsChooseKeywordViewModel(trojmiastoRepository)
                 isAssignableFrom(PublicTransportViewModel::class.java) ->
                     PublicTransportViewModel(stopsRepository)
                 isAssignableFrom(StopViewModel::class.java) ->

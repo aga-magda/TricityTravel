@@ -5,13 +5,17 @@
 
 package com.aib.tricitytravel.data
 
+import com.aib.tricitytravel.data.db.KeywordsDao
+import com.aib.tricitytravel.data.dto.ReportKeyword
 import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class TrojmiastoRepository @Inject constructor() {
+class TrojmiastoRepository @Inject constructor(
+    private val keywordsDao: KeywordsDao
+) {
 
     fun getNewsFromTrojmiastoReport(): List<Pair<String, String>> {
         var doc: Document? = null
@@ -24,5 +28,17 @@ class TrojmiastoRepository @Inject constructor() {
         val times = doc.select(".report-content-inner h3")!!.eachText()
 
         return titles.zip(times)
+    }
+
+    suspend fun getKeywords(): List<ReportKeyword> {
+        return keywordsDao.getKeywords()
+    }
+
+    suspend fun addKeyword(keyword: ReportKeyword) {
+        keywordsDao.insertKeywords(keyword)
+    }
+
+    suspend fun deleteKeyword(keyword: ReportKeyword) {
+        keywordsDao.deleteKeywords(keyword)
     }
 }

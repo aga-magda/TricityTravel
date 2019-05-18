@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
+  ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.aib.tricitytravel.ui.settingsfragment.choosekeywordsfragment.SettingsChooseKeywordViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.settingsfragment.choosekeywordsfragment.SettingsChooseKeywordFragment">
+
+        <EditText
+            android:id="@+id/addKeywordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/add_keyword"
+            android:inputType="text" />
+
+        <TextView
+            style="@style/centeredInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isLoading="@{viewModel.isLoading}"
+            android:showIfZero="@{viewModel.keywords}"
+            android:text="@string/no_keywords_entered" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isLoadingGone="@{viewModel.isLoading}"
+            android:padding="10dp" />
+
+        <ProgressBar
+            android:layout_width="@dimen/progress_indicator_size"
+            android:layout_height="@dimen/progress_indicator_size"
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:isLoadingVisible="@{viewModel.isLoading}" />
+
+    </LinearLayout>
+
+</layout>
