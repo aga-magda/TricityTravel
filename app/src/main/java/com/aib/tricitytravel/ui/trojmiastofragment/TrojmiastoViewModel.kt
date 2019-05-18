@@ -25,8 +25,28 @@ class TrojmiastoViewModel @Inject constructor(
 
     fun getNews() {
         GlobalScope.launch {
+            _isLoading.postValue(true)
             val news = repository.getNewsFromTrojmiastoReport()
             _news.postValue(news)
+            _isLoading.postValue(false)
+        }
+    }
+
+    fun getFilteredNews() {
+        GlobalScope.launch {
+            _isLoading.postValue(true)
+
+            val news = repository.getNewsFromTrojmiastoReport()
+            val keywords = repository.getKeywords()
+
+            val filteredNews =
+                news.filter { newsItem ->
+                    keywords.any {
+                        newsItem.second.toLowerCase().contains(it.content.toLowerCase())
+                    }
+                }
+
+            _news.postValue(filteredNews)
             _isLoading.postValue(false)
         }
     }

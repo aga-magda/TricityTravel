@@ -40,7 +40,7 @@ class SettingsFragment : Fragment() {
         binding.editWeatherButton.setOnClickListener {
             val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
             sharedPref?.edit()?.putString("prefWeatherCity", binding.weatherEditText.text.toString())?.apply()
-            Toast.makeText(context, getString(R.string.city_changed), Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.saved), Toast.LENGTH_SHORT).show()
             Log.d("stop", sharedPref.getString("prefWeatherCity", "Gdańsk"))
         }
 

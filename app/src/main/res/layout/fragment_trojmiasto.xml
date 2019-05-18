@@ -24,6 +24,14 @@
             android:layout_height="match_parent"
             android:isLoadingGone="@{viewModel.isLoading}" />
 
+        <TextView
+            style="@style/centeredInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isLoading="@{viewModel.isLoading}"
+            android:showIfZero="@{viewModel.news}"
+            android:text="@string/no_news_containing_your_keywords" />
+
         <ProgressBar
             android:layout_width="@dimen/progress_indicator_size"
             android:layout_height="@dimen/progress_indicator_size"

@@ -6,11 +6,10 @@
 package com.aib.tricitytravel.ui.trojmiastofragment
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.preference.PreferenceManager
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -33,9 +32,11 @@ class TrojmiastoFragment : BaseFragment() {
     }
 
     private val news = mutableListOf<Pair<String, String>>()
+    private var isFiltered = false
 
     private lateinit var binding: FragmentTrojmiastoBinding
     private lateinit var recyclerAdapter: TrojmiastoRecyclerAdapter
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
@@ -44,11 +45,20 @@ class TrojmiastoFragment : BaseFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_trojmiasto, container, false)
+        sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        isFiltered = sharedPref.getBoolean("prefIsFiltered", false)
 
         setupViewModel()
         setupRecyclerView()
 
+        setFiltering()
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.trojmiasto_report_menu, menu)
+        setFilterIcon(menu.findItem(R.id.filter))
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -58,8 +68,33 @@ class TrojmiastoFragment : BaseFragment() {
                     .navigate(TrojmiastoFragmentDirections.actionTrojmiastoFragmentToSettingsFragment())
                 return true
             }
+            R.id.filter -> {
+                setFiltering()
+                setFilterIcon(item)
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun setFiltering() {
+        if (isFiltered) {
+            isFiltered = false
+            sharedPref.edit().putBoolean("prefIsFiltered", true).apply()
+            viewModel.getNews()
+        } else {
+            isFiltered = true
+            sharedPref.edit().putBoolean("prefIsFiltered", false).apply()
+            viewModel.getFilteredNews()
+        }
+    }
+
+    private fun setFilterIcon(item: MenuItem) {
+        if (!isFiltered) {
+            item.setIcon(R.drawable.ic_filter)
+        } else {
+            item.setIcon(R.drawable.ic_all)
+        }
     }
 
     private fun setupViewModel() {
@@ -67,8 +102,6 @@ class TrojmiastoFragment : BaseFragment() {
         binding.viewModel = viewModel
 
         observeNews()
-
-        viewModel.getNews()
     }
 
     private fun observeNews() {

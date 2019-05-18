@@ -31,7 +31,6 @@
     <string name="humidity">Wilgotność</string>
     <string name="wind">Wiatr</string>
     <string name="weather_settings">Ustawienia pogody</string>
-    <string name="city_changed">Zmieniono miasto</string>
     <string name="city">Miasto</string>
     <string name="car">Samochód</string>
     <string name="where_are_you_travelling_today">Gdzie dziś podróżujesz?</string>
@@ -47,4 +46,7 @@
     <string name="edit_keyword_list">Edytuj listę słów kluczowych</string>
     <string name="add_keyword">Dodaj słowo kluczowe</string>
     <string name="no_keywords_entered">Brak słów kluczowych</string>
+    <string name="no_news_containing_your_keywords">Brak wiadomości zawierających ustawione słowa kluczowe</string>
+    <string name="filter">Filtruj</string>
+    <string name="saved">Zapisano</string>
 </resources>
