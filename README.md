@@ -1,3 +1,5 @@
+<img align="right" width="150" height="150" src="documentation/TricityTravel_icon.png">
+
 # TricityTravel
 
 ## 1. Specyfikacja wymagań
@@ -216,7 +218,7 @@ object URLs {
 ## 5. Uwagi ogólne
 
 ### 5.1 Skrótowy opis głównych pakietów
- - data - zawiera klasy odpowiedzialne za pobieranie danych z web service'ów, zapisywanie w lokalnej bazie danych, a także wszystkie modele i obiekty DTO (Data Transfer Objects),
+ - data - zawiera klasy odpowiedzialne za pobieranie danych z web service'ów, zapis w lokalnej bazie danych, a także wszystkie modele i obiekty DTO (Data Transfer Objects),
  - di - zawiera moduły i komponenty wykorzystywane przez bibliotekę Dagger 2 potrzebne do wstrzykiwania zależności (Dependency Injection),
  - ui - zawiera wszystkie klasy widoków w aplikacji, wewnątrz pakietu zastosowany jest dodatkowy podział według zasady "package by feature",
  - util - zawiera klasy pomocnicze m. in. wykorzystywane w data binding.
