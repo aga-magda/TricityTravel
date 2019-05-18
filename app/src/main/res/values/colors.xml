@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright © 2019 by Agnieszka Maciejewska, Maciej Królik, Krzysztof Mikołajczyk. TricityTravel
   ~ This application is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-nd/4.0/.
   -->
 
 <resources>
-    <color name="colorPrimary">#616161</color>
-    <color name="colorPrimaryDark">#3A3A3A</color>
-    <color name="colorAccent">#5794F1</color>
+    <color name="colorPrimary">#80C41C</color>
+    <color name="colorPrimaryDark">#517910</color>
+    <color name="colorAccent">#80C41C</color>
 </resources>

@@ -42,6 +42,7 @@
     <string name="fields_cannot_be_empty">Pola nie mogą być puste</string>
     <string name="incorrect_locations">Niepoprawne lokalizacje</string>
     <string name="report">Raport</string>
+    <string name="weather">Pogoda</string>
     <string name="trojmiasto_pl_report_settings">Ustawienia raportu Trojmiasto.pl</string>
     <string name="edit_keyword_list">Edytuj listę słów kluczowych</string>
     <string name="add_keyword">Dodaj słowo kluczowe</string>

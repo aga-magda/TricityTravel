@@ -44,6 +44,7 @@
     <string name="fields_cannot_be_empty">Fields cannot be empty</string>
     <string name="incorrect_locations">Incorrect locations</string>
     <string name="report">Report</string>
+    <string name="weather">Weather</string>
     <string name="trojmiasto_pl_report_settings">Trojmiasto.pl report settings</string>
     <string name="edit_keyword_list">Edit keyword list</string>
     <string name="add_keyword">Add keyword</string>
