@@ -29,6 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:isLoading="@{viewModel.isLoading}"
+            android:isLoadingGone="@{viewModel.isLoading}"
             android:showIfZero="@{viewModel.news}"
             android:text="@string/no_news_containing_your_keywords" />
 

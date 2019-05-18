@@ -7,7 +7,6 @@ package com.aib.tricitytravel.ui.settingsfragment
 
 import android.os.Bundle
 import android.preference.PreferenceManager
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,7 +40,6 @@ class SettingsFragment : Fragment() {
             val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
             sharedPref?.edit()?.putString("prefWeatherCity", binding.weatherEditText.text.toString())?.apply()
             Toast.makeText(context, getString(R.string.saved), Toast.LENGTH_SHORT).show()
-            Log.d("stop", sharedPref.getString("prefWeatherCity", "Gdańsk"))
         }
 
         binding.editKeywordsButton.setOnClickListener {

@@ -23,10 +23,12 @@ class TrojmiastoViewModel @Inject constructor(
     private val _news = MutableLiveData<List<Pair<String, String>>>()
     val news: LiveData<List<Pair<String, String>>> = _news
 
+    private var _allNews = listOf<Pair<String, String>>()
+
     fun getNews() {
         GlobalScope.launch {
             _isLoading.postValue(true)
-            val news = repository.getNewsFromTrojmiastoReport()
+            val news = getCachedNews()
             _news.postValue(news)
             _isLoading.postValue(false)
         }
@@ -36,7 +38,7 @@ class TrojmiastoViewModel @Inject constructor(
         GlobalScope.launch {
             _isLoading.postValue(true)
 
-            val news = repository.getNewsFromTrojmiastoReport()
+            val news = getCachedNews()
             val keywords = repository.getKeywords()
 
             val filteredNews =
@@ -48,6 +50,15 @@ class TrojmiastoViewModel @Inject constructor(
 
             _news.postValue(filteredNews)
             _isLoading.postValue(false)
+        }
+    }
+
+    private fun getCachedNews(): List<Pair<String, String>> {
+        return if (_allNews.isNullOrEmpty()) {
+            _allNews = repository.getNewsFromTrojmiastoReport()
+            _allNews
+        } else {
+            _allNews
         }
     }
 }

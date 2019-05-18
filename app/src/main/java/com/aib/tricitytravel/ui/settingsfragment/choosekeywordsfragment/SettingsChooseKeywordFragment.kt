@@ -34,7 +34,6 @@ class SettingsChooseKeywordFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProviders.of(this, viewModelFactory).get(SettingsChooseKeywordViewModel::class.java)
     }
-    private val keywords = mutableListOf<ReportKeyword>()
 
     private lateinit var binding: FragmentSettingsChooseKeywordBinding
 

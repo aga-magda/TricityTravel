@@ -8,8 +8,6 @@ package com.aib.tricitytravel.ui.carfragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aib.tricitytravel.R
-import com.aib.tricitytravel.TricityTravel
 import com.aib.tricitytravel.data.MapsRepository
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

@@ -78,22 +78,22 @@ class TrojmiastoFragment : BaseFragment() {
     }
 
     private fun setFiltering() {
-        if (isFiltered) {
-            isFiltered = false
-            sharedPref.edit().putBoolean("prefIsFiltered", true).apply()
-            viewModel.getNews()
-        } else {
+        if (!isFiltered) {
             isFiltered = true
             sharedPref.edit().putBoolean("prefIsFiltered", false).apply()
+            viewModel.getNews()
+        } else {
+            isFiltered = false
+            sharedPref.edit().putBoolean("prefIsFiltered", true).apply()
             viewModel.getFilteredNews()
         }
     }
 
     private fun setFilterIcon(item: MenuItem) {
         if (!isFiltered) {
-            item.setIcon(R.drawable.ic_filter)
-        } else {
             item.setIcon(R.drawable.ic_all)
+        } else {
+            item.setIcon(R.drawable.ic_filter)
         }
     }
 
