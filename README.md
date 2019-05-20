@@ -86,14 +86,16 @@ Prowadzący ma prawo przekazywać projekt innym studentom w celu dzielenia się 
 1. Wyświetlenie listy przystanków.
 2. Dodanie przystanku do listy.
 
-### 3.4. T4 - Personalizacja ustawień - tagi?
+### 3.4. T4 - Personalizacja ustawień - tagi
 **Scenariusz dotyczy:** W2  
-**Cel testu:**  
+**Cel testu:**  Testowanie ustawienia tagów do poboru informacji z Trojmiasto.pl
 **Sposób dostępu:** Widok wywoływany poprzez wybranie z menu "Ustawienia".  
 **Scenariusz (kroki testowe):**   
 #### Akcje użytkownika:  
-
+1. Wpisanie tagu w pole tekstowe.
+2. Naciśnięcie enter na klawiaturze ekranowej.
 #### Odpowiedź systemu:  
+Tag wyświetla się poniżej pola tekstowego.
 
 ### 3.5. T5 - Wyświetlenie czasu dojazdu do punktu docelowego
 **Scenariusz dotyczy:** W3  
