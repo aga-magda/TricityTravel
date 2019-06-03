@@ -50,6 +50,7 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/startLocationTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -58,6 +59,7 @@
                         android:text="@={startLocation}" />
 
                     <EditText
+                        android:id="@+id/endLocationTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -67,6 +69,7 @@
                         android:text="@={endLocation}" />
 
                     <Button
+                        android:id="@+id/timeOfTravelButton"
                         style="@style/blue_button"
                         android:onClick="@{() -> viewModel.calculateRoute(startLocation, endLocation)}"
                         android:text="@string/time_of_travel" />
@@ -80,6 +83,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/timeOfTravelCardView"
                 android:layout_width="match_parent"
                 android:layout_height="110dp"
                 android:layout_margin="@dimen/card_view_margin"
